@@ -1,6 +1,6 @@
 package com.example.study.service;
 
-import com.example.study.model.Ingredient;
+import com.example.study.model.Ingredient.Ingredient;
 import com.example.study.repository.IngredientRepository;
 import org.springframework.stereotype.Service;
 

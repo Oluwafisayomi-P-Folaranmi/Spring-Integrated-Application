@@ -1,5 +1,6 @@
-package com.example.study.model;
+package com.example.study.model.TacoOrder;
 
+import com.example.study.model.Taco.Taco;
 import lombok.*;
 
 import java.util.ArrayList;

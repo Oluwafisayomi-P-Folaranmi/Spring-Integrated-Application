@@ -1,13 +1,11 @@
 package com.example.study.controller;
 
-import com.example.study.model.Taco;
+import com.example.study.model.Taco.Taco;
 import com.example.study.service.TacoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,12 @@ public class TacoController {
     @GetMapping(path = "/tacos")
     public List<Taco> tacos() {
         return tacoService.findAll();
+    }
+
+    @GetMapping(path = "/tacos/{tacoId}")
+    public ResponseEntity<Taco> taco(@PathVariable Long tacoId) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(tacoService.findById(tacoId));
     }
 }

@@ -1,8 +1,8 @@
-package com.example.study.model;
+package com.example.study.model.Taco;
 
+import com.example.study.model.Ingredient.Ingredient;
 import lombok.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -11,6 +11,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Taco {
+
+    private Long id;
 
     private String name;
 

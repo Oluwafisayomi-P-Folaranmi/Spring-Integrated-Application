@@ -1,6 +1,6 @@
 package com.example.study.repository;
 
-import com.example.study.model.Ingredient;
+import com.example.study.model.Ingredient.Ingredient;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
