@@ -25,23 +25,6 @@ public class LicenseServiceApplication {
     public CommandLineRunner runner() {
         return args -> {
             System.out.println("Application started!");
-            System.out.println("Arguments: ");
         };
-    }
-
-    @Bean
-    public LocaleResolver localeResolver() {
-        SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(Locale.US);
-        return localeResolver;
-    }
-
-    @Bean
-    public ResourceBundleMessageSource messageSource() {
-        ResourceBundleMessageSource messageSource =
-                new ResourceBundleMessageSource();
-        messageSource.setUseCodeAsDefaultMessage(true);
-        messageSource.setBasenames("messages");
-        return messageSource;
     }
 }

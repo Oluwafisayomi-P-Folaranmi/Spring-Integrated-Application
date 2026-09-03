@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class License extends RepresentationModel<License> {
+public class License {
 
     private int id;
     private String licenseId;
@@ -20,5 +20,4 @@ public class License extends RepresentationModel<License> {
     private String organizationId;
     private String productName;
     private String licenseType;
-
 }

@@ -28,24 +28,24 @@ public class LicenseController {
         License license = licenseService
                 .getLicense(licenseId, organizationId);
 
-        LicenseRepresentationModel licenseRepresentationModel =
-                new LicenseRepresentationModel(license);
+        LicenseRepresentationModel lrm = new LicenseRepresentationModel(license);
+        lrm.add(linkTo(methodOn(LicenseController.class)
+                .getLicense(organizationId, license.getLicenseId()))
+                .withSelfRel(),
 
-        licenseRepresentationModel.add(
-                linkTo (methodOn(LicenseController.class)
-                        .getLicense(organizationId, license.getLicenseId()))
-                        .withSelfRel(),
                 linkTo(methodOn(LicenseController.class)
                         .createLicense(organizationId, license, null))
                         .withRel("createLicense"),
+
                 linkTo(methodOn(LicenseController.class)
                         .updateLicense(organizationId, license, null))
                         .withRel("updateLicense"),
+
                 linkTo(methodOn(LicenseController.class)
                         .deleteLicense(organizationId, license.getLicenseId()))
-                        .withRel("deleteLicense"));
-
-        return ResponseEntity.ok(licenseRepresentationModel);
+                        .withRel("deleteLicense")
+                );
+        return null;
     }
 
     // POST // v1/organization/{organizationId}/license/

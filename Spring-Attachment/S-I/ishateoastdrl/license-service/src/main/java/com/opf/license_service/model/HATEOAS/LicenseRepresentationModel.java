@@ -12,10 +12,23 @@ import org.springframework.stereotype.Component;
 @Builder
 @Data
 @ToString
+@NoArgsConstructor
 @AllArgsConstructor
-public class LicenseRepresentationModel extends RepresentationModel<License> {
+public class LicenseRepresentationModel extends RepresentationModel<LicenseRepresentationModel> {
 
-    @JsonUnwrapped
-    private final License license;
+    private int id;
+    private String licenseId;
+    private String description;
+    private String organizationId;
+    private String productName;
+    private String licenseType;
 
+    public LicenseRepresentationModel(License license) {
+        this.id = license.getId();
+        this.licenseId = license.getLicenseId();
+        this.description = license.getDescription();
+        this.organizationId = license.getOrganizationId();
+        this.productName = license.getProductName();
+        this.licenseType = license.getLicenseType();
+    }
 }

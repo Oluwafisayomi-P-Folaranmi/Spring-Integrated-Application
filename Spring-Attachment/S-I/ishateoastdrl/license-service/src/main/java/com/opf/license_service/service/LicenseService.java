@@ -22,6 +22,7 @@ public class LicenseService {
             String licenseId,
             String organizationId){
 
+        // Assume we have a license queried out...
         License license = new License();
         license.setId(new Random().nextInt(1000));
         license.setLicenseId(licenseId);
