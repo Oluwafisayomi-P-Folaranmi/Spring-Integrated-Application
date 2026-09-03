@@ -29,9 +29,10 @@ public class LicenseController {
                 .getLicense(licenseId, organizationId);
 
         LicenseRepresentationModel lrm = new LicenseRepresentationModel(license);
-        lrm.add(linkTo(methodOn(LicenseController.class)
-                .getLicense(organizationId, license.getLicenseId()))
-                .withSelfRel(),
+        lrm.add(
+                linkTo(methodOn(LicenseController.class)
+                        .getLicense(organizationId, license.getLicenseId()))
+                        .withSelfRel(),
 
                 linkTo(methodOn(LicenseController.class)
                         .createLicense(organizationId, license, null))
